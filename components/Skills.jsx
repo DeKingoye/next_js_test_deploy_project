@@ -142,7 +142,6 @@
 
 
 import {
-  SiMicrosoftpowerbi,
   SiPython,
   SiJavascript,
   SiNextdotjs,
@@ -156,7 +155,7 @@ import {
   Share2,     // SharePoint (fallback)
   Workflow,   // Power Automate (fallback)
   AppWindow,  // Power Apps (fallback)
-  Database,   // Dataverse
+  Database,   // Dataverse + Power BI
   Bot,        // AI Builder
   Cpu,        // Compute Engine
   Package,    // Artifact Registry
@@ -173,12 +172,12 @@ import {
 // On stocke des composants (pas des éléments) pour éviter de rendre `undefined`
 const skills = [
   // Microsoft Power Platform & 365
-  { icon: SiMicrosoftpowerbi, name: 'Power BI' },
-  { icon: AppWindow,  name: 'Power Apps' },
-  { icon: Workflow,   name: 'Power Automate' },
-  { icon: Share2,     name: 'SharePoint' },
-  { icon: Database,   name: 'Dataverse' },
-  { icon: Bot,        name: 'AI Builder' },
+  { icon: Database,  name: 'Power BI' },          // Lucide (stable)
+  { icon: AppWindow, name: 'Power Apps' },
+  { icon: Workflow,  name: 'Power Automate' },
+  { icon: Share2,    name: 'SharePoint' },
+  { icon: Database,  name: 'Dataverse' },
+  { icon: Bot,       name: 'AI Builder' },
 
   // Cloud & Dev
   { icon: Cloud,         name: 'Azure' },
