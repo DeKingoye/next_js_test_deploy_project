@@ -1,0 +1,172 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "tailwind-scrollbar"; 
+
+
+@theme {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1130px;
+  --breakpoint-2xl: 1520px; 
+  
+  /* colors */
+  --color-primary: #0d091a;
+  --color-secondary: #140e25;
+  --color-accent: #5810ff;
+  --color-accent-hover: #4a0bde;
+  --color-tertiary: #201837;
+  --color-tertiary-hover: #271f40;
+
+  /*fonts*/
+  --font-primary: "Sometype Mono";
+
+}
+
+body {
+  @apply font-primary bg-primary text-white leading-relaxed;
+} 
+
+.h1 {
+  @apply text-[40px] md:text-[52px] xl:text-[56px] leading-[1] tracking-tight font-extrabold;
+} 
+
+.h2 {
+  @apply text-[32px] md:text-[36px] xl:text-[38px] leading-[1.15] tracking-tight font-medium;
+} 
+
+.h3 {
+  @apply text-[28px] md:text-[30px] xl:text-[32px] leading-[1.2] font-medium;
+} 
+
+.h4 {
+  @apply text-[22px] md:text-[26px] font-medium leading-snug;
+}
+
+.container {
+  @apply px-[15px];
+}
+
+/* btns */
+.btn {
+  @apply flex items-center justify-center rounded-full cursor-pointer transition-all font-medium h-[56px]; 
+}
+
+.btn-sm{
+  @apply min-w-[168px] px-5 text-[15px] font-semibold;
+}
+
+.btn-lg{
+  @apply min-w-[200px] px-6;
+}
+
+/* btns color*/
+
+.btn-accent {
+  @apply bg-accent hover:bg-accent-hover;
+}
+
+.btn-tertiary {
+  @apply bg-tertiary hover:bg-tertiary-hover;
+}
+
+.btn-white {
+  @apply bg-white hover:bg-white/90 text-primary;
+}
+
+.btn-white {
+  @apply bg-white hover:bg-white/90 text-primary;
+}
+
+/* swiper css */
+.swiper {
+  margin: 0 !important;
+}
+
+ /* swiper bullets */
+
+ .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullets, 
+ .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  @apply bg-accent; 
+ }
+
+
+
+
+
+ .left-\[120px\] {
+    left: 180px;
+}
+
+.top-16 {
+    top: calc(var(--spacing) * 52);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Ce qui marche */
+
+
+/* ==== Flèches Swiper (desktop + mobile) ==== */
+.swiper-button-next,
+.swiper-button-prev {
+  @apply w-10 h-10 rounded-full bg-accent text-white shadow-lg flex items-center justify-center;
+  z-index: 10;
+  transition: transform .2s;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after { font-size: 18px; }
+.swiper-button-disabled { @apply opacity-50 cursor-not-allowed; }
+
+/* Animation directionnelle (clignote + petit “nudge”) */
+@keyframes blink-right {
+  0%,100%{opacity:.85; transform:translateX(0); box-shadow:0 0 0 0 rgba(168,131,255,.30)}
+  50%    {opacity:1;   transform:translateX(4px); box-shadow:0 0 0 10px rgba(168,131,255,0)}
+}
+@keyframes blink-left {
+  0%,100%{opacity:.85; transform:translateX(0); box-shadow:0 0 0 0 rgba(168,131,255,.30)}
+  50%    {opacity:1;   transform:translateX(-4px); box-shadow:0 0 0 10px rgba(168,131,255,0)}
+}
+.swiper-button-next:not(.swiper-button-disabled){ animation: blink-right 1.2s ease-in-out infinite; }
+.swiper-button-prev:not(.swiper-button-disabled){ animation: blink-left 1.2s ease-in-out infinite; }
+.swiper-button-next:hover,
+.swiper-button-prev:hover { animation-play-state: paused; transform: scale(1.06); }
+
+/* Accessibilité : réduire l’anim si demandé */
+@media (prefers-reduced-motion: reduce) {
+  .swiper-button-next:not(.swiper-button-disabled),
+  .swiper-button-prev:not(.swiper-button-disabled) { animation: none; }
+}
+
+/* ==== MOBILE : rendre les flèches visibles + plus cliquables ==== */
+/* IMPORTANT: ceci écrase toute règle précédente qui les cachait */
+@media (max-width: 640px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: flex !important;     /* force l’affichage */
+    @apply w-9 h-9;             /* zone de clic ~44px */
+    backdrop-filter: saturate(120%) blur(6px);
+  }
+
+  /* un peu plus petits chevrons en mobile */
+  .swiper-button-next::after,
+  .swiper-button-prev::after { font-size: 16px; }
+
+  /* marge côté écran */
+  .swiper-button-next { right: 6px; }
+  .swiper-button-prev { left: 6px; }
+
+  /* éviter de mordre sur les safe areas iOS */
+  @supports (padding: max(0px)) {
+    .swiper-button-next { right: max(8px, env(safe-area-inset-right)); }
+    .swiper-button-prev { left:  max(8px, env(safe-area-inset-left)); }
+  }
+}
