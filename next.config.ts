@@ -1,29 +1,16 @@
-// import type { NextConfig } from "next";
-
-// const nextConfig: NextConfig = {
-//   /* config options here */
-// };
-
-// export default nextConfig;
-
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Sortie "standalone" => bundle serveur minimal parfait pour Docker
+  // Sortie "standalone" : bundle serveur minimal (idéal Docker / Vercel)
   output: "standalone",
 
-  // Autorise les images distantes (garde large si ton portfolio charge depuis divers CDNs)
+  // Autorise les images distantes
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "**" },
-      { protocol: "http", hostname: "**" }, // retire-le si tu n'as pas d'images en http
+      { protocol: "http", hostname: "**" }, // optionnel : retire si inutile
     ],
   },
-
-  // Si tu veux aller au bout même avec des avertissements/erreurs pendant la phase init :
-  // (Tu peux remettre à true/false selon ta tolérance)
-  eslint: { ignoreDuringBuilds: true },
-  typescript: { ignoreBuildErrors: true },
 };
 
 export default nextConfig;
