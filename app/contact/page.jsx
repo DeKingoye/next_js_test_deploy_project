@@ -27,7 +27,7 @@ const Contact = () => {
                     <h2 >Entrer en <span className='text-accent text-lg'>contact avec moi</span></h2><br /> 
                     
                     <p className='max-w-[460px]'>
-                    Expert en transformation digitale, je suis passionné par la data et l’automatisation des processus. J’accompagne les organisations dans la modernisation de leurs outils et la valorisation de leurs données grâce à la Power Platform (Power BI, Power Apps, Power Automate, AiBuilder, Sharepoint). Mon objectif : transformer les données en leviers de décision et les tâches répétitives en flux intelligents, pour rendre les entreprises plus efficaces, agiles et orientées résultats.
+                    Consultant en transformation digitale, je suis passionné par la data et l’automatisation des processus. J’accompagne les organisations dans la modernisation de leurs outils et la valorisation de leurs données grâce à la Power Platform (Power BI, Power Apps, Power Automate, AiBuilder, Sharepoint). Mon objectif : transformer les données en leviers de décision et les tâches répétitives en flux intelligents, pour rendre les entreprises plus efficaces, agiles et orientées résultats.
                     </p>
                   </div>
                   {/* info */}
