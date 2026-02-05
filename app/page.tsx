@@ -116,9 +116,9 @@ const Home = () => {
             <br />
             <TypeAnimation
               sequence={[
-                'Expert en transformation Digitale',
+                'Consultant en transformation Digitale',
                 2000,
-                'Passionné par la data',
+                'je suis passionné par la data et l’automatisation des processus',
                 2000,
               ]}
               wrapper="span"
