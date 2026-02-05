@@ -118,7 +118,7 @@ const Home = () => {
               sequence={[
                 'Consultant en transformation Digitale',
                 2000,
-                'je suis passionné par la data et l’automatisation des processus',
+                'je suis passionné par la data, l’automatisation des processus et le developpement web',
                 2000,
               ]}
               wrapper="span"
